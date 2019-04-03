@@ -6,7 +6,8 @@ import { ListarComponent } from './productos/listar/listar.component';
 
 const routes: Routes = [
   {path: 'productos/crear', component: CrearComponent},
-  {path: 'productos/listar', component: ListarComponent}
+  {path: 'productos/listar', component: ListarComponent},
+  {path: '', redirectTo: 'productos/listar', pathMatch: 'full' }
 ];
 
 @NgModule({
