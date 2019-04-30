@@ -1,23 +1,14 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div  fxFlexFill
-      class="container"
+<div  class="container"
       fxLayout="column"
       fxLayoutGap="5px">
 
-  <app-header [fxFlex]="10"
-    [fxFlex.xs]="10"
+  <app-header [fxFlex]="20"    
     class="header"
     fxLayout="row"></app-header>
-
-  <div  [fxFlex]="75"
-        [fxFlex.xs]="70"
-        class="content">
-
-    <router-outlet></router-outlet>
+  
+  <router-outlet [fxFlex]="30"> </router-outlet>
     
-  </div>
-
-  <app-footer [fxFlex]="15"
+  <app-footer [fxFlex]="30"
     [fxFlex.xs]="20"
     fxLayout="row"
     fxLayout.xs="row wrap"
