@@ -1,3 +1,17 @@
-<p>
-  crear works!
-</p>
+<form name="form">
+
+  <p>
+    <mat-form-field appearance="standard">
+      <mat-label>Ingrese nombre</mat-label>
+      <input name="nombre" matInput placeholder="Nombre del producto" [(ngModel)]="producto.nombre" autofocus required>
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <mat-hint>Nombre del producto</mat-hint>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field>
+      <textarea matInput placeholder="Description" [(ngModel)]="producto.descripcion"></textarea>
+    </mat-form-field>
+  </p>
+
+</form>
