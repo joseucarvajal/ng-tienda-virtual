@@ -4,7 +4,7 @@ import { Producto } from 'src/app/shared/model/product.model';
 @Component({
   selector: 'app-crear',
   templateUrl: './crear.component.html',
-  styleUrls: ['./crear.component.sass']
+  styleUrls: ['./crear.component.scss']
 })
 export class CrearComponent implements OnInit {
 
@@ -14,6 +14,10 @@ export class CrearComponent implements OnInit {
 
   ngOnInit() {
     this.producto = new Producto();
+  }
+
+  guardar() {
+    alert(JSON.stringify(this.producto));
   }
 
 }
