@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Producto } from 'src/app/shared/model/product.model';
+import { ProductoService } from 'src/app/shared/model/services/producto.service';
 
 @Component({
   selector: 'app-crear',
@@ -10,14 +11,17 @@ export class CrearComponent implements OnInit {
 
   producto: Producto;
 
-  constructor() { }
+  constructor( private productoService: ProductoService ) { }
 
   ngOnInit() {
     this.producto = new Producto();
   }
 
   guardar() {
-    alert(JSON.stringify(this.producto));
+    this.productoService.saveProducto(this.producto)
+      .subscribe((producto: Producto) => {
+        alert('Producto guardado con exitosamente');
+      });
   }
 
 }
