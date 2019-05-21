@@ -18,9 +18,14 @@ export class ProductoService {
   saveProducto(producto: Producto): Observable<Producto> {
     return new Observable<Producto>((observer) => {
       this.httpClient.post(`${environment.backEndBaseURL}`, producto)
-        .subscribe((savedPost: Producto) => {
-          observer.next(savedPost);
-        });
+        .subscribe(
+          (savedPost: Producto) => {
+            observer.next(savedPost);
+          },
+          (err: any) => {
+            observer.error('Error guardando el producto');
+          }
+        );
     });
   }
 

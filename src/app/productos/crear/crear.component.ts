@@ -19,9 +19,13 @@ export class CrearComponent implements OnInit {
 
   guardar() {
     this.productoService.saveProducto(this.producto)
-      .subscribe((producto: Producto) => {
-        alert('Producto guardado con exitosamente');
-      });
+      .subscribe(
+        (producto: Producto) => {
+          alert('Producto guardado exitosamente');
+        },
+        (err: string) => {
+          alert(err);
+        }
+      );
   }
-
 }
